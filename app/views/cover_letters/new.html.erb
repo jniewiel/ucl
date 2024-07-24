@@ -1,0 +1,26 @@
+<!-- app/views/cover_letters/new.html.erb -->
+
+<h1>Unique Cover Letter Generator</h1>
+
+<%= form_tag('/generate_cover_letter', method: 'post') do %>
+  <div>
+    <label for="resume">Resume:</label>
+    <%= text_area_tag :resume, nil, rows: 10, cols: 50, required: true %>
+  </div>
+
+  <div>
+    <label for="job_description">Job Description:</label>
+    <%= text_area_tag :job_description, nil, rows: 10, cols: 50, required: true %>
+  </div>
+
+  <%= submit_tag 'Generate Cover Letter' %>
+<% end %>
+
+<% if @cover_letter %>
+  <h2>Generated Cover Letter:</h2>
+  <div id="generated-cover-letter">
+    <%= simple_format(@cover_letter) %>
+  </div>
+  
+  <%= link_to 'Generate Another', root_path, class: 'button' %>
+<% end %>
