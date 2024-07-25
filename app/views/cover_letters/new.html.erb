@@ -1,26 +1,116 @@
 <!-- app/views/cover_letters/new.html.erb -->
 
-<h1>Unique Cover Letter Generator</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<%= form_tag('/generate_cover_letter', method: 'post') do %>
-  <div>
-    <label for="resume">Resume:</label>
-    <%= text_area_tag :resume, nil, rows: 10, cols: 50, required: true %>
-  </div>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique Cover Letter Generator</title>
 
-  <div>
-    <label for="job_description">Job Description:</label>
-    <%= text_area_tag :job_description, nil, rows: 10, cols: 50, required: true %>
-  </div>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <%= submit_tag 'Generate Cover Letter' %>
-<% end %>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Loading Placeholder Glow Effect -->
+    <style>
+      .placeholder-glow .placeholder {
+        animation: placeholder-glow 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
 
-<% if @cover_letter %>
-  <h2>Generated Cover Letter:</h2>
-  <div id="generated-cover-letter">
-    <%= simple_format(@cover_letter) %>
-  </div>
-  
-  <%= link_to 'Generate Another', root_path, class: 'button' %>
-<% end %>
+  <body>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <h1 class="text-center mb-4">Unique Cover Letter Generator</h1>
+
+          <%= form_tag('/generate_cover_letter', method: 'post', class: 'mb-4', id: 'cover-letter-form') do %>
+            <div class="mb-3">
+              <label for="resume" class="form-label">Resume:</label>
+              <%= text_area_tag :resume, nil, rows: 10, class: 'form-control', required: true %>
+            </div>
+
+            <div class="mb-3">
+              <label for="job_description" class="form-label">Job Description:</label>
+              <%= text_area_tag :job_description, nil, rows: 10, class: 'form-control', required: true %>
+            </div>
+
+            <div class="text-center">
+              <%= submit_tag 'Generate Cover Letter', class: 'btn btn-primary', id: 'submit-btn' %>
+            </div>
+          <% end %>
+
+          <div id="loading-placeholder" class="d-none">
+            <h3 class="text-center mb-3">Generating Cover Letter...</h3>
+            <div class="text-center mb-3">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div class="placeholder-glow">
+              <p><span class="placeholder col-7"></span></p>
+              <p><span class="placeholder col-4"></span></p>
+              <p><span class="placeholder col-4"></span> <span class="placeholder col-6"></span></p>
+              <p><span class="placeholder col-8"></span></p>
+              <p><span class="placeholder col-7"></span></p>
+              <p><span class="placeholder col-4"></span> <span class="placeholder col-4"></span></p>
+              <p><span class="placeholder col-6"></span></p>
+              <p><span class="placeholder col-8"></span></p>
+            </div>
+          </div>
+
+          <div id="generated-cover-letter-container" class="d-none">
+            <h2 class="text-center mb-3">Generated Cover Letter:</h2>
+            <div id="generated-cover-letter" class="border p-3 mb-3"></div>
+
+            <div class="text-center">
+              <%= link_to 'Generate Another', root_path, class: 'btn btn-secondary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Loading Placeholder (JS) -->
+    <script>
+      $(document).ready(function() {
+        $('#cover-letter-form').on('submit', function(e) {
+          e.preventDefault();
+          var form = $(this);
+          var submitBtn = $('#submit-btn');
+          var loadingPlaceholder = $('#loading-placeholder');
+          var coverLetterContainer = $('#generated-cover-letter-container');
+          var coverLetterContent = $('#generated-cover-letter');
+
+          submitBtn.prop('disabled', true);
+          loadingPlaceholder.removeClass('d-none');
+          coverLetterContainer.addClass('d-none');
+
+          $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+            dataType: 'json',
+            success: function(response) {
+              loadingPlaceholder.addClass('d-none');
+              coverLetterContent.html(response.cover_letter);
+              coverLetterContainer.removeClass('d-none');
+              submitBtn.prop('disabled', false);
+            },
+            error: function() {
+              alert('An error occurred while generating the cover letter. Please try again.');
+              loadingPlaceholder.addClass('d-none');
+              submitBtn.prop('disabled', false);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
