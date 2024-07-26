@@ -1,92 +1,48 @@
-# Rails Template
+# UCL (Unique Cover Letter) Generator
 
-This is a base Ruby on Rails repository configured for learning with Codespaces (and Gitpod).
+## Overview
 
-- Ruby version: `3.2.1`
-- Rails version: `7.1.3.3`
+The UCL (Unique Cover Letter) Generator is an AI-powered tool designed to streamline the job application process by automatically creating tailored cover letters. By analyzing your resume and the job posting, this application generates personalized cover letters that highlight your most relevant skills and experiences.
 
+## Features
 
-We've added additional Ruby gems and other software that aren't automatically available in a new Rails app, and configured 
+- **Resume Parser**: Extracts key information from your professional profile
+- **Job Posting Analyzer**: Scans job descriptions to identify key requirements and desired skills
+- **AI-Powered Writing**: Generates a draft cover letter emphasizing your relevant qualifications
+- **Edit and Refine**: Interface for users to modify and improve the generated letter
+- **Skill Matching**: Compares your skills and experience with job requirements
+- **Keyword Optimization**: Incorporates industry-specific keywords to improve ATS compatibility
+- **Multiple Versions**: Can create various cover letter options for you to choose from
 
-### UJS and Turbo
+## User Stories
 
-In Rails version 7, support for Unobtrusive JavaScript (UJS) is not the default. Rather, [this has been replaced with Turbo](https://guides.rubyonrails.org/working_with_javascript_in_rails.html#turbo).
+- Generate a base letter for easy personalization
+- Edit and further customize the generated cover letter
+- Create compelling cover letters for recent graduates with limited experience
+- Analyze transferable skills for career changers
+- Quickly generate multiple versions for different job applications
 
-However, in AppDev, we typically want to first demonstrate UJS and then enable Turbo manually when we want it.
+<!--
+## Contributing
 
-Therefore, UJS has been pre-configured here with these steps: 
+We welcome contributions to the Unique Cover Letter Generator! Please read our contributing guidelines before submitting pull requests.
 
-- Pin UJS + jQuery in `config/importmap.rb` by running:
+## Getting Started
 
-    ```
-    % ./bin/importmap pin @rails/ujs
-    % ./bin/importmap pin jquery
-    ```
+(Instructions for setting up and running the project locally will be added here)
 
-- Add UJS + jQuery via:
+## Usage
 
-    ```js
-    // app/javascript/application.js
-    import jquery from "jquery";
-    window.jQuery = jquery;
-    window.$ = jquery;
-    import Rails from "@rails/ujs"
-    Rails.start();
-    ```
+(Step-by-step guide on how to use the application will be added here)
 
-UJS and Turbo can co-exist side-by-side with [these instructions, which we already implemented here](https://github.com/hotwired/turbo-rails/blob/main/UPGRADING.md#upgrading-from-rails-ujs--turbolinks-to-turbo).
+## License
 
-By default, Turbo is disabled via:
+(License information will be added here)
 
-```js
-// app/javascript/application.js
-import { Turbo } from "@hotwired/turbo-rails"
-Turbo.session.drive = false
-```
+## Contact
 
-Set it to `true` to enable Turbo everywhere, or you can use `data-turbo="true"` to enable Drive on a per-element basis while leaving it globally `false`.
+(Contact information or links will be added here)
 
-### Additional gems:
-
-- [`appdev_support`](https://github.com/firstdraft/appdev_support)
-- [`annotate`](https://github.com/ctran/annotate_models)
-- [`awesome_print`](https://github.com/awesome-print/awesome_print)
-- [`better_errors`](https://github.com/BetterErrors/better_errors)
-- [`binding_of_caller`](https://github.com/banister/binding_of_caller)
-- [`dotenv-rails`](https://github.com/bkeepers/dotenv)
-- [`draft_generators`](https://github.com/firstdraft/draft_generators/)
-- [`draft_matchers`](https://github.com/jelaniwoods/draft_matchers/)
-- [`devise`](https://github.com/heartcombo/devise)
-- [`faker`](https://github.com/faker-ruby/faker)
-- [`grade_runner`](https://github.com/firstdraft/grade_runner/)
-- [`htmlbeautifier`](https://github.com/threedaymonk/htmlbeautifier/)
-- [`http`](https://github.com/httprb/http)
-- [`pry_rails`](https://github.com/pry/pry-rails)
-- [`rails_db`](https://github.com/igorkasyanchuk/rails_db)
-- [`rails-erd`](https://github.com/voormedia/rails-erd)
-- [`rspec-html-matchers`](https://github.com/kucaahbe/rspec-html-matchers)
-- [`rspec-rails`](https://github.com/rspec/rspec-rails)
-- [`rufo`](https://github.com/ruby-formatter/rufo)
-- [`specs_to_readme`](https://github.com/firstdraft/specs_to_readme)
-- [`table_print`](https://github.com/arches/table_print)
-- [`web_git`](https://github.com/firstdraft/web_git)
-- [`webmock`](https://github.com/bblimke/webmock)
-
-### Additional software:
-- OS Ubuntu 20.04.5 LTS
-- Chromedriver
-- Fly.io's `flyctl`
-- Google Chrome (headless browser)
-- Graphviz
-- Node JS 18
-- NPM 8.19.3
-- Postgresql 12
-- Redis
-- Yarn
-
-### VS Code extensions:
-- vortizhe.simple-ruby-erb
-- mbessey.vscode-rufo
-- aliariff.vscode-erb-beautify
-- eamodio.gitlens
-- setobiralo.erb-commenter
+## Acknowledgements
+(Any acknowledgements or credits will be added here)
+-->
