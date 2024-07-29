@@ -33,6 +33,9 @@ gem "redis", "~> 4.0"
 # Implementation of OpenAI Ruby gem
 gem "ruby-openai"
 
+# Implementation of Devise gem
+gem "devise"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
