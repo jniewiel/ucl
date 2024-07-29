@@ -22,18 +22,23 @@ The UCL (Unique Cover Letter) Generator is an AI-powered tool designed to stream
 - Analyze transferable skills for career changers
 - Quickly generate multiple versions for different job applications
 
+## Getting Started
+
+1. In terminal, run ``` bundle install ```.
+2. Run ``` bin/dev ``` to start server.
+3. Open Port 3000 server.
+
+## Usage
+
+1. Paste resume into designated "Resume" text area.
+2. Paste job description into designated "Job Description" text area.
+3. Click on "Generate Cover Letter" button to create cover letter.
+4. (Optional) Click "Generate Another" button to refresh to new, clean page.
+
 <!--
 ## Contributing
 
 We welcome contributions to the Unique Cover Letter Generator! Please read our contributing guidelines before submitting pull requests.
-
-## Getting Started
-
-(Instructions for setting up and running the project locally will be added here)
-
-## Usage
-
-(Step-by-step guide on how to use the application will be added here)
 
 ## License
 
