@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cover letters</h1>
+
+<div id="cover_letters">
+  <% @cover_letters.each do |cover_letter| %>
+    <%= render cover_letter %>
+    <p>
+      <%= link_to "Show this cover letter", cover_letter %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New cover letter", new_cover_letter_path %>

@@ -1,9 +1,10 @@
-<h1>New cover letter</h1>
+<h1>Editing cover letter</h1>
 
 <%= render "form", cover_letter: @cover_letter %>
 
 <br>
 
 <div>
+  <%= link_to "Show this cover letter", @cover_letter %> |
   <%= link_to "Back to cover letters", cover_letters_path %>
 </div>
