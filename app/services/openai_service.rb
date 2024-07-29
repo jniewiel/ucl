@@ -12,10 +12,10 @@ class OpenaiService
     - Resume highlights & personal info: #{resume}
     - Job requirements: #{job_description}
       
-    Make the letter specific to this candidate and job. 
+    Make the letter specific to this candidate and job.
+    Try to focus more on unique aspects that match/connect the user to the job, rather than repeating details that a recruiter could already read in the user's resume.
     Highlight how the candidates experience directly relates to the job requirements. 
-    Avoid generic phrases. 
-    Be creative and original."
+    Avoid generic phrases, & be creative and original."
 
     response = @client.chat(
       parameters: {
@@ -34,7 +34,12 @@ class OpenaiService
     # Example Resume
     #-------------------------------------------------------------------------------------------------#
     # Jan Niewielski
-    # Chicago, IL  |  773-751-8655  |  jann.developer@gmail.com  |  LinkedIn  |  Github  |  Portfolio
+    # Chicago, IL  
+    # 773-751-8655
+    # jann.developer@gmail.com
+    # LinkedIn
+    # Github
+    # Portfolio
 
     # EDUCATION
     # Discovery Partners Institute - Chicago, IL 							       	           May 2024 – Present
@@ -77,10 +82,10 @@ class OpenaiService
     # Development Tools: Visual Studio Code, GitHub, Codepen, Webflow, Render
     # Other: Microsoft Office Suite, Agile methodology, Object-Oriented Programming
     # Bilingual: English and Polish
-    #-------------------------------------------------------------------------------------------------#
+    # -------------------------------------------------------------------------------------------------#
 
     # Example Job Description
-    #-------------------------------------------------------------------------------------------------#
+    # -------------------------------------------------------------------------------------------------#
     # About the job
     # In this age of disruption, organizations need to navigate the future with confidence by tapping into the power of data analytics, robotics, and cognitive technologies such as Artificial Intelligence (AI). Our Strategy & Analytics portfolio helps clients leverage rigorous analytical capabilities and a pragmatic mindset to solve the most complex of problems. By joining our team, you will play a key role in helping to our clients uncover hidden relationships from vast troves of data and transforming the Government and Public Services marketplace.
 
