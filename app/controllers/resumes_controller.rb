@@ -1,3 +1,5 @@
+# <!-- app/controllers/resumes_controller.rb -->
+
 class ResumesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
