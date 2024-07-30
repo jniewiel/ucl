@@ -1,3 +1,5 @@
+# <!-- app/controllers/job_postings_controller.rb -->
+
 class JobPostingsController < ApplicationController
   before_action :set_job_posting, only: %i[ show edit update destroy ]
 

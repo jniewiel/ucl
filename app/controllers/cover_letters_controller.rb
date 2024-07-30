@@ -1,3 +1,5 @@
+# <!-- app/controllers/cover_letters_controller.rb -->
+
 class CoverLettersController < ApplicationController
   require_relative '../services/openai_service'
   
