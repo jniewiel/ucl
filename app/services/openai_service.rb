@@ -4,7 +4,7 @@ require "openai"
 
 class OpenaiService
   def initialize
-    @client = OpenAI::Client.new({ :access_token => ENV.fetch("OPENAI_API_KEY") })
+    @client = OpenAI::Client.new(access_token: ENV.fetch("OPENAI_API_KEY"))
   end
 
   def generate_cover_letter(resume, job_description)
@@ -18,19 +18,17 @@ class OpenaiService
     Wrap resume aspects in <span class='resume-highlight'> tags and job description aspects in <span class='job-highlight'> tags."
 
     response = @client.chat(
-      {
-        :parameters => {
-          :model => "gpt-3.5-turbo",
-          :messages => [{ :role => "user", :content => prompt }],
-          :temperature => 0.9,
-          :top_p => 0.95,
-          :max_tokens => 500,
-          :presence_penalty => 0.6,
-          :frequency_penalty => 0.6,
-        },
-      }
+      parameters: {
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.9,
+        top_p: 0.95,
+        max_tokens: 500,
+        presence_penalty: 0.6,
+        frequency_penalty: 0.6,
+      },
     )
 
-    return response.dig("choices", 0, "message", "content")
+    response.dig("choices", 0, "message", "content")
   end
 end
