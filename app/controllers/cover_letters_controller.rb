@@ -1,4 +1,6 @@
 class CoverLettersController < ApplicationController
+  require_relative '../services/openai_service'
+  
   before_action :set_cover_letter, only: %i[ show edit update destroy ]
 
   # GET /cover_letters or /cover_letters.json
@@ -17,6 +19,19 @@ class CoverLettersController < ApplicationController
 
   # GET /cover_letters/1/edit
   def edit
+  end
+
+  def generate
+    resume = params[:resume]
+    job_description = params[:job_description]
+
+    openai_service = OpenaiService.new
+    @cover_letter = openai_service.generate_cover_letter(resume, job_description)
+
+    respond_to do |format|
+      format.html { render :new }
+      format.json { render json: { cover_letter: @cover_letter.gsub("\n", "<br>") } }
+    end
   end
 
   # POST /cover_letters or /cover_letters.json
