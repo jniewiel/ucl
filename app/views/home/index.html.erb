@@ -1,4 +1,4 @@
-# <!-- app/views/home/index.html.erb -->
+<!-- app/views/home/index.html.erb -->
 
 <!DOCTYPE html>
 <html>
@@ -18,18 +18,30 @@
     <div class="container mt-5">
       <h1 class="text-center">Welcome to UCL</h1>
 
+      <!--change 'if' order to have guest first, user second to fix alert box-->
+
       <% if user_signed_in? %>
         <% if current_user.email == "guest@example.com" %>
           <div class="alert alert-info text-center">
             <p>Welcome, Guest User!</p>
-            <%= link_to 'Test it out', ucl_test_path, method: :get, class: 'btn btn-primary' %>
+            <%= link_to 'Test it out', ucl_test_path, method: :get, class: 'btn btn-success' %>
             <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
           </div>
         <% else %>
-          <div class="alert alert-success text-center">
+          <div class="mt-2 text-center d-grid gap-2 d-md-block">
             <p>Welcome, <%= current_user.email %>!</p>
-            <%= link_to 'Test it out', ucl_test_path, method: :get, class: 'btn btn-primary' %>
-            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+
+            <%= link_to 'Test it out', ucl_test_path, method: :get, class: 'btn btn-success' %>
+
+            <div class="mt-2 text-center d-grid gap-2 d-md-block">
+              <%= link_to 'See resumes', resumes_url, method: :get, class: 'btn btn-primary' %>
+              <%= link_to 'See job postings', job_postings_url, method: :get, class: 'btn btn-primary' %>
+              <%= link_to 'See cover letters', cover_letters_url, method: :get, class: 'btn btn-primary' %>
+            </div>
+
+            <div class="mt-2 text-center d-grid gap-2 d-md-block">
+              <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+            </div>
           </div>
         <% end %>
       <% else %>

@@ -1,15 +1,15 @@
-# <!-- app/views/job_postings/index.html.erb -->
+<!-- app/views/job_postings/index.html.erb -->
 
 <h1>Job Postings</h1>
 
-<%= link_to 'New Job Posting', new_jobposting_path %>
+<%= link_to 'New Job Posting', new_job_posting_path %>
 
 <ul>
-  <% @jobpostings.each do |jobposting| %>
+  <% @job_postings.each do |job_posting| %>
     <li>
-      <%= link_to jobposting.id, jobposting_path(jobposting) %>
-      <%= link_to 'Edit', edit_jobposting_path(jobposting) %>
-      <%= link_to 'Delete', jobposting_path(jobposting), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to job_posting.id, job_posting_path(job_posting) %>
+      <%= link_to 'Edit', edit_job_posting_path(job_posting) %>
+      <%= link_to 'Delete', job_posting_path(job_posting), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
 </ul>

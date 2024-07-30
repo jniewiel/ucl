@@ -1,15 +1,15 @@
-# <!-- app/views/cover_letters/index.html.erb -->
+<!-- app/views/cover_letters/index.html.erb -->
 
 <h1>Your Cover Letters</h1>
 
-<%= link_to 'New Cover Letter', new_coverletter_path %>
+<%= link_to 'New Cover Letter', new_cover_letter_path %>
 
 <ul>
-  <% @coverletters.each do |coverletter| %>
+  <% @cover_letters.each do |cover_letter| %>
     <li>
-      <%= link_to coverletter.id, coverletter_path(coverletter) %>
-      <%= link_to 'Edit', edit_coverletter_path(coverletter) %>
-      <%= link_to 'Delete', coverletter_path(coverletter), method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to cover_letter.id, cover_letter_path(cover_letter) %>
+      <%= link_to 'Edit', edit_cover_letter_path(cover_letter) %>
+      <%= link_to 'Delete', cover_letter_path(cover_letter), method: :delete, data: { confirm: 'Are you sure?' } %>
     </li>
   <% end %>
 </ul>
