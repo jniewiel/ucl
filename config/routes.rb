@@ -9,5 +9,6 @@ Rails.application.routes.draw do
 
   get 'guest_login', to: 'home#guest_login'
   get 'ucl_test', to: 'home#test'
-  post '/generate_cover_letter', to: 'cover_letters#generate'
+
+  post 'generate_cover_letter', to: 'cover_letters#generate'
 end

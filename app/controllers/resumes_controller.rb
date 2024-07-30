@@ -9,6 +9,7 @@ class ResumesController < ApplicationController
   end
 
   def show
+    redirect_to resumes_url, notice: 'Resumes are successfully loaded.'
   end
 
   def new
