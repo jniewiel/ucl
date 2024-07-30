@@ -1,14 +1,13 @@
-<p style="color: green"><%= notice %></p>
+<h1>Your Cover Letters</h1>
 
-<h1>Cover letters</h1>
+<%= link_to 'New Cover Letter', new_coverletter_path %>
 
-<div id="cover_letters">
-  <% @cover_letters.each do |cover_letter| %>
-    <%= render cover_letter %>
-    <p>
-      <%= link_to "Show this cover letter", cover_letter %>
-    </p>
+<ul>
+  <% @coverletters.each do |coverletter| %>
+    <li>
+      <%= link_to coverletter.id, coverletter_path(coverletter) %>
+      <%= link_to 'Edit', edit_coverletter_path(coverletter) %>
+      <%= link_to 'Delete', coverletter_path(coverletter), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
   <% end %>
-</div>
-
-<%= link_to "New cover letter", new_cover_letter_path %>
+</ul>
