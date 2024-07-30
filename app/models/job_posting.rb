@@ -9,4 +9,5 @@
 #  updated_at      :datetime         not null
 #
 class JobPosting < ApplicationRecord
+  has_many :cover_letters
 end
