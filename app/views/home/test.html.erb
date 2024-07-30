@@ -13,10 +13,19 @@
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Loading Placeholder Glow Effect -->
+
+    <!-- HTML Styling -->
     <style>
+      /* Loading Placeholder Glow Effect */
       .placeholder-glow .placeholder {
         animation: placeholder-glow 2s ease-in-out infinite;
+      }
+      /* Highlight Resume and Job Descriptions */
+      .resume-highlight {
+        background-color: lightblue;
+      }
+      .job-highlight {
+        background-color: lightgreen;
       }
     </style>
   </head>
@@ -72,10 +81,11 @@
 
           <div id="generated-cover-letter-container" class="d-none">
             <h2 class="text-center mb-3">Generated Cover Letter:</h2>
-            <div id="generated-cover-letter" class="border p-3 mb-3"></div>
+            <div id="generated-cover-letter" class="border p-3 mb-3" contenteditable="true"></div>
 
-            <div class="text-center">
-              <%= link_to 'Generate Another', ucl_test_path, class: 'btn btn-secondary' %>
+            <div class="d-flex justify-content-center mb-3 gap-3">
+              <button id="copy-btn" class="btn btn-outline-success">Copy to Clipboard</button>
+              <%= link_to 'Generate Another', ucl_test_path, { :class => 'btn btn-outline-danger' } %>
             </div>
           </div>
         </div>
@@ -117,6 +127,17 @@
               submitBtn.prop('disabled', false);
             }
           });
+        });
+
+        // Handles clipboard copy function
+        $('#copy-btn').on('click', function() {
+          var coverLetterContent = $('#generated-cover-letter').text();
+          var tempTextarea = $('<textarea>');
+          $('body').append(tempTextarea);
+          tempTextarea.val(coverLetterContent).select();
+          document.execCommand('copy');
+          tempTextarea.remove();
+          alert('Cover letter copied to clipboard!');
         });
       });
     </script>
