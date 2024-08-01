@@ -28,7 +28,7 @@ class CoverLettersController < ApplicationController
     job_description = params[:job_description]
 
     openai_service = OpenaiService.new
-    @cover_letter = openai_service.generate_cover_letter(resume, job_description)
+    @cover_letter = openai_service.generate_highlighted_cover_letter(resume, job_description)
 
     respond_to do |format|
       format.html { render :new }
