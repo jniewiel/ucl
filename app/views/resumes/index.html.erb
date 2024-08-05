@@ -1,0 +1,15 @@
+<!-- app/views/resumes/index.html.erb -->
+
+<h1>Your Resumes</h1>
+
+<%= link_to 'New Resume', new_resume_path %>
+
+<ul>
+  <% @resumes.each do |resume| %>
+    <li>
+      <%= link_to resume.id, resume_path(resume) %>
+      <%= link_to 'Edit', edit_resume_path(resume) %>
+      <%= link_to 'Delete', resume_path(resume), method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
