@@ -4,7 +4,7 @@
 #
 #  id              :integer          not null, primary key
 #  job_description :text
-#  job_posting     :text
+#  job_posting     :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
