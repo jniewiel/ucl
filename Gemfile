@@ -35,6 +35,8 @@ gem "ruby-openai"
 
 gem "bootstrap"
 
+gem "mini_racer"
+
 gem "sassc-rails"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
