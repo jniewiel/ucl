@@ -8,8 +8,14 @@ class JobPostingsController < ApplicationController
     @job_postings = JobPosting.all
   end
 
+  def select
+    job_postings = JobPosting.all
+    render({ :json => { :job_postings => job_postings } })
+  end
+
   # GET /job_postings/1 or /job_postings/1.json
   def show
+    render :show
   end
 
   # GET /job_postings/new
@@ -60,13 +66,14 @@ class JobPostingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job_posting
-      @job_posting = JobPosting.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def job_posting_params
-      params.require(:job_posting).permit(:created_at, :updated_at, :job_posting, :job_description)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job_posting
+    @job_posting = JobPosting.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def job_posting_params
+    params.require(:job_posting).permit(:created_at, :updated_at, :job_posting, :job_description)
+  end
 end
