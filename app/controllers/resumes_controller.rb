@@ -8,8 +8,13 @@ class ResumesController < ApplicationController
     @resumes = current_user.resumes
   end
 
+  def select
+    user_resumes = current_user.resumes
+    render({ :json => { :resumes => user_resumes } })
+  end
+
   def show
-    redirect_to resumes_url, notice: 'Resumes are successfully loaded.'
+    render :show
   end
 
   def new
