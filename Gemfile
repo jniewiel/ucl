@@ -33,8 +33,6 @@ gem "redis", "~> 4.0"
 # Implementation of OpenAI Ruby gem
 gem "ruby-openai"
 
-gem "bootstrap"
-
 gem "mini_racer"
 
 gem "sassc-rails"
