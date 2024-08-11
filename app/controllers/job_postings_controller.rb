@@ -13,6 +13,17 @@ class JobPostingsController < ApplicationController
     render({ :json => { :job_postings => job_postings } })
   end
 
+  def fetch_job_posting_id
+    job_description = params[:job_description]
+    job_posting = JobPosting.find_by({ :job_description => job_description })
+
+    if job_posting
+      render({ :json => { :job_posting_id => job_posting.id } })
+    else
+      render({ :json => { :error => "Job posting not found" }, :status => :not_found })
+    end
+  end
+
   # GET /job_postings/1 or /job_postings/1.json
   def show
     render :show
