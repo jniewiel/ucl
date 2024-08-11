@@ -1,0 +1,162 @@
+<!-- app/views/shared/_javascript.html.erb -->
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Loading Placeholder (JS) -->
+<script>
+  $(document).ready(function() {
+    console.log("Document ready");
+
+    $('#cover-letter-form').on('submit', function(e) {
+      e.preventDefault();
+      var form = $(this);
+      var submitBtn = $('#submit-btn');
+      var loadingPlaceholder = $('#loading-placeholder');
+      var coverLetterContainer = $('#generated-cover-letter-container');
+      var coverLetterContent = $('#generated-cover-letter');
+
+      submitBtn.prop('disabled', true);
+      loadingPlaceholder.removeClass('d-none');
+      coverLetterContainer.addClass('d-none');
+
+      $.ajax({
+        url: form.attr('action'),
+        method: form.attr('method'),
+        data: form.serialize(),
+        dataType: 'json',
+        success: function(response) {
+          loadingPlaceholder.addClass('d-none');
+          coverLetterContent.html(response.cover_letter);
+          coverLetterContainer.removeClass('d-none');
+          submitBtn.prop('disabled', false);
+        },
+        error: function() {
+          alert('An error occurred while generating the cover letter. Please try again.');
+          loadingPlaceholder.addClass('d-none');
+          submitBtn.prop('disabled', false);
+        }
+      });
+    });
+
+    // Handles clipboard copy function
+    $('#copy-btn').on('click', function() {
+      var coverLetterContent = $('#generated-cover-letter').text();
+      var tempTextarea = $('<textarea>');
+      $('body').append(tempTextarea);
+      tempTextarea.val(coverLetterContent).select();
+      document.execCommand('copy');
+      tempTextarea.remove();
+      alert('Cover letter copied to clipboard!');
+    });
+
+    // Load resume button click event
+    $('#load-resume-btn').on('click', function() {
+      console.log("Load Resume button clicked");
+      $.ajax({
+        url: '/user_resumes',
+        method: 'get',
+        dataType: 'json',
+        success: function(response) {
+          console.log("AJAX request successful", response);
+          if (response.resumes && response.resumes.length > 0) {
+            var resumeList = $('#resume-list');
+            resumeList.empty(); // Clear existing list items
+
+            response.resumes.forEach(function(resume) {
+              var listItem = $('<li class="list-group-item list-group-item-action">')
+                .text(resume.resume)
+                .data('content', resume.extracted_text)
+                .on('click', function() {
+                  $('#resume-textarea').val($(this).data('content'));
+                  $('#resumeModal').modal('hide');
+                });
+
+              resumeList.append(listItem);
+            });
+
+            $('#resumeModal').modal('show');
+          } else {
+            alert('No resumes found.');
+          }
+        },
+        error: function(xhr, status, error) {
+          console.log("AJAX request failed", status, error);
+          alert('An error occurred while loading the resumes. Please try again.');
+        }
+      });
+    });
+
+    // Load job description button click event
+    $('#load-job-description-btn').on('click', function() {
+      console.log("Load Job Description button clicked");
+      $.ajax({
+        url: '/user_job_postings',
+        method: 'get',
+        dataType: 'json',
+        success: function(response) {
+          console.log("AJAX request successful", response);
+          if (response.job_postings && response.job_postings.length > 0) {
+            var jobDescriptionList = $('#job-description-list');
+            jobDescriptionList.empty(); // Clear existing list items
+
+            response.job_postings.forEach(function(job) {
+              var listItem = $('<li class="list-group-item list-group-item-action">')
+                .text(job.job_posting)
+                .data('description', job.job_description)
+                .data('job_posting_id', job.id) // Store job posting ID in data attribute for later use
+                .on('click', function() {
+                  $('#job-description-textarea')
+                    .val($(this).data('description'))
+                    .data('job_posting_id', $(this).data('job_posting_id')); // Store job posting ID in textarea for later use
+                  $('#jobDescriptionModal').modal('hide');
+                  
+                  // Save job_posting_id in a hidden input field
+                  $('#job_posting_id').val($(this).data('job_posting_id'));
+                });
+
+              jobDescriptionList.append(listItem);
+            });
+
+            $('#jobDescriptionModal').modal('show');
+          } else {
+            alert('No job descriptions found.');
+          }
+        },
+        error: function(xhr, status, error) {
+          console.log("AJAX request failed", status, error);
+          alert('An error occurred while loading the job descriptions. Please try again.');
+        }
+      });
+    });
+
+    // Save cover letter button click event
+    $('#save-cover-letter-btn').on('click', function() {
+      var coverLetterContent = $('#generated-cover-letter').html();
+      var jobPostingId = $('#job_posting_id').val(); // Retrieve job_posting_id from hidden field
+
+      console.log("Job Posting ID:", jobPostingId);
+
+      $.ajax({
+        url: '/save_cover_letter',
+        method: 'post',
+        data: {
+          cover_letter: coverLetterContent,
+          job_posting_id: jobPostingId
+        },
+        dataType: 'json',
+        success: function(response) {
+          alert('Cover letter saved successfully!');
+        },
+        error: function(xhr, status, error) {
+          console.log("AJAX request failed", status, error);
+          if (xhr.responseJSON && xhr.responseJSON.details) {
+            alert('Failed to save cover letter: ' + xhr.responseJSON.details.join(", "));
+          } else {
+            alert('An error occurred while saving the cover letter. Please try again.');
+          }
+        }
+      });
+    });
+  });
+</script>
