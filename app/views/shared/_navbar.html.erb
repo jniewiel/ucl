@@ -1,29 +1,31 @@
 <!-- app/views/shared/_navbar.html.erb -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to 'UCL', root_path, { :class => 'navbar-brand' } %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="bg-gray-100 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <%= link_to 'UCL', root_path, { :class => 'text-xl font-bold' } %>
+    <button class="sm:hidden text-gray-600" type="button" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+    <div class="hidden sm:flex sm:items-center sm:w-auto" id="navbarNav">
+      <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4">
         <% if user_signed_in? %>
           <li class="nav-item">
-            <%= link_to 'Home', root_path, method: :get, class: 'nav-link' %>
+            <%= link_to 'Home', root_path, { :method => 'get', :class => 'text-gray-700 hover:text-gray-900' } %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            <%= link_to 'Log out', destroy_user_session_path, { :method => 'delete', :class => 'text-gray-700 hover:text-gray-900' } %>
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+            <%= link_to 'Sign up', new_user_registration_path, { :class => 'text-gray-700 hover:text-gray-900' } %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Log in', new_user_session_path, class: 'nav-link' %>
+            <%= link_to 'Log in', new_user_session_path, { :class => 'text-gray-700 hover:text-gray-900' } %>
           </li>
           <li class="nav-item">
-            <%= link_to 'Log in as Guest', guest_login_path, class: 'nav-link' %>
+            <%= link_to 'Log in as Guest', guest_login_path, { :class => 'text-gray-700 hover:text-gray-900' } %>
           </li>
         <% end %>
       </ul>
@@ -31,5 +33,5 @@
   </div>
 </nav>
 
-<p class="notice text-center mt-n3"><%= notice %></p>
-<p class="alert text-center mt-n3"><%= alert %></p>
+<p class="notice text-center mt-3 text-green-700"><%= notice %></p>
+<p class="alert text-center mt-3 text-red-700"><%= alert %></p>

@@ -1,15 +1,15 @@
 <!-- app/views/resumes/index.html.erb -->
 
-<h1>Your Resumes</h1>
+<h1 class="text-2xl font-bold mb-4">Your Resumes</h1>
 
-<%= link_to 'New Resume', new_resume_path %>
+<%= link_to 'New Resume', new_resume_path, { :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-4 inline-block' } %>
 
-<ul>
+<ul class="list-disc pl-5">
   <% @resumes.each do |resume| %>
-    <li>
-      <%= link_to resume.id, resume_path(resume) %>
-      <%= link_to 'Edit', edit_resume_path(resume) %>
-      <%= link_to 'Delete', resume_path(resume), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <li class="mb-2">
+      <%= link_to resume.id, resume_path(resume), { :class => 'text-blue-600 hover:text-blue-800 underline' } %>
+      <%= link_to 'Edit', edit_resume_path(resume), { :class => 'text-yellow-600 hover:text-yellow-800 underline ml-2' } %>
+      <%= link_to 'Delete', resume_path(resume), { :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'text-red-600 hover:text-red-800 underline ml-2' } %>
     </li>
   <% end %>
 </ul>

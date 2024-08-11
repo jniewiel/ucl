@@ -1,10 +1,12 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/resumes/show.html.erb -->
+
+<p class="text-green-600"><%= notice %></p>
 
 <%= render @resume %>
 
-<div>
-  <%= link_to "Edit this resume", edit_resume_path(@resume) %> |
-  <%= link_to "Back to resumes", resumes_path %>
+<div class="mt-4">
+  <%= link_to "Edit this resume", edit_resume_path(@resume), { :class => 'text-blue-600 hover:text-blue-800 underline' } %> |
+  <%= link_to "Back to resumes", resumes_path, { :class => 'text-blue-600 hover:text-blue-800 underline' } %>
 
-  <%= button_to "Destroy this resume", @resume, method: :delete %>
+  <%= button_to "Destroy this resume", @resume, { :method => :delete, :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2' } %>
 </div>

@@ -1,42 +1,28 @@
-<%= form_with(model: resume) do |form| %>
-  <% if resume.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(resume.errors.count, "error") %> prohibited this resume from being saved:</h2>
+<!-- app/views/resumes/_form.html.erb -->
 
-      <ul>
-        <% resume.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+<%= form_with(model: resume, local: true) do |form| %>
+  <% if resume.errors.any? %>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
+      <strong class="font-bold">Please fix the following errors:</strong>
+      <ul class="mt-2">
+        <% resume.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :created_at, style: "display: block" %>
-    <%= form.datetime_field :created_at %>
+  <div class="mb-4">
+    <%= form.label :title, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :title, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
   </div>
 
-  <div>
-    <%= form.label :updated_at, style: "display: block" %>
-    <%= form.datetime_field :updated_at %>
+  <div class="mb-4">
+    <%= form.label :content, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_area :content, rows: 10, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" %>
   </div>
 
-  <div>
-    <%= form.label :resume, style: "display: block" %>
-    <%= form.text_area :resume %>
-  </div>
-
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div>
-    <%= form.label :extracted_text, style: "display: block" %>
-    <%= form.text_area :extracted_text %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="flex justify-center">
+    <%= form.submit "Save", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
   </div>
 <% end %>
