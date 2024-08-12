@@ -1,28 +1,32 @@
 <!-- app/views/home/index.html.erb -->
 
 <div class="container mx-auto mt-5">
-  <h1 class="text-center text-2xl font-bold">Welcome to UCL</h1>
+  <h1 class="text-center text-2xl font-bold">UCL</h1>
 
   <% if user_signed_in? %>
     <% if current_user.email == "guest@example.com" %>
-      <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded text-center">
+      <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-4 rounded text-center">
         <p>Welcome, Guest User!</p>
         <%= link_to 'Test it out', ucl_test_path, { :method => 'get', :class => 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' } %>
         <%= link_to 'Log out', destroy_user_session_path, { :method => 'delete', :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' } %>
       </div>
     <% else %>
-      <div class="mt-2 text-center space-y-2">
-        <p>Welcome, <%= current_user.email %>!</p>
+      <div class="mt-2 text-center space-y-4">
+        <p class="mb-4">Welcome, <%= current_user.email %>!</p>
 
-        <%= link_to 'Test it out', ucl_new_path, { :method => 'get', :class => 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' } %>
+        <%= link_to 'Test it out', ucl_new_path, { :method => 'get', :class => 'bg-green-500 hover:bg-green-700:scale-150 text-white font-bold py-2 px-4 rounded' } %>
+        
+        <button class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:scale-105 hover:shadow-lg;">
+          Click me!
+        </button>
 
-        <div class="mt-2 space-y-2">
+        <div class="mt-4 space-y-4">
           <%= link_to 'See resumes', resumes_url, { :method => 'get', :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
           <%= link_to 'See job postings', job_postings_url, { :method => 'get', :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
           <%= link_to 'See cover letters', cover_letters_url, { :method => 'get', :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
         </div>
 
-        <div class="mt-2 space-y-2">
+        <div class="mt-4 space-y-2">
           <%= link_to 'Log out', destroy_user_session_path, { :method => 'delete', :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' } %>
         </div>
       </div>
