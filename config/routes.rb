@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
   
-  root "home#index"
+  root 'home#index'
 
   resources :resumes
   resources :job_postings
   resources :cover_letters, only: [:index, :show, :new, :edit, :update, :destroy]
+
+  get 'home', to: 'home#index'
 
   get 'guest_login', to: 'home#guest_login'
   get 'ucl_test', to: 'home#test'

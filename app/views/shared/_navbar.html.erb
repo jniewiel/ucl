@@ -5,18 +5,20 @@
 <div>
   <header class="navbar-container">
     <header data-thq="thq-navbar" class="navbar-navbar-interactive">
-      <img alt="logo" src="https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/2e928e30-fb99-43fd-832c-190c8c705405/104061c1-d1cf-429f-a67f-d4f925a429e2?org_if_sml=113300&amp;force_format=original" class="navbar-ucl-logo"/>
+      <%= link_to home_path do %>
+            <%= image_tag "https://aheioqhobo.cloudimg.io/v7/_playground-bucket-v2.teleporthq.io_/2e928e30-fb99-43fd-832c-190c8c705405/104061c1-d1cf-429f-a67f-d4f925a429e2?org_if_sml=113300&force_format=original", alt: "UCL logo", class: "navbar-ucl-logo" %>
+          <% end %>
 
       <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
         <nav class="navbar-links1">
-          <a href="https://www.teleporthq.io">
-            <span>Link1</span>
+          <a href="#features" target="_self" rel="noreferrer noopener">
+            <span>Features</span>
           </a>
-          <a href="https://www.teleporthq.io">
-            <span>Link2</span>
+          <a href="#steps" target="_self" rel="noreferrer noopener">
+            <span>How It Works</span>
           </a>
-          <a href="https://www.teleporthq.io" target="_blank" rel="noreferrer noopener">
-            <span>Link3</span>
+          <a href="#pricing" target="_self" rel="noreferrer noopener">
+            <span>Pricing</span>
           </a>
         </nav>
 

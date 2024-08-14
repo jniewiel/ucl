@@ -11,13 +11,11 @@
   display: flex;
   z-index: 1000;
   position: fixed;
+  top: 0;
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.39);
-  margin-top: 0px;
-  align-items: center;
-  padding-top: var(--dl-space-space-twounits);
+  align-items: center;  /* This should already be here, ensuring vertical centering */
   padding-left: var(--dl-space-space-threeunits);
   padding-right: var(--dl-space-space-threeunits);
-  padding-bottom: var(--dl-space-space-twounits);
   justify-content: space-between;
   background-color: #ffffff;
 }
