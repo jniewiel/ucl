@@ -1,0 +1,232 @@
+.navbar-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  background-color: var(--dl-color-theme-neutral-light1);
+}
+.navbar-navbar-interactive {
+  width: 100%;
+  height: 86px;
+  display: flex;
+  z-index: 1000;
+  position: fixed;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.39);
+  margin-top: 0px;
+  align-items: center;
+  padding-top: var(--dl-space-space-twounits);
+  padding-left: var(--dl-space-space-threeunits);
+  padding-right: var(--dl-space-space-threeunits);
+  padding-bottom: var(--dl-space-space-twounits);
+  justify-content: space-between;
+  background-color: #ffffff;
+}
+.navbar-ucl-logo {
+  width: 80px;
+  height: 39px;
+}
+.navbar-desktop-menu {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+.navbar-links1 {
+  gap: var(--dl-space-space-twounits);
+  flex: 1;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  margin-left: var(--dl-space-space-threeunits);
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.navbar-buttons1 {
+  gap: var(--dl-space-space-twounits);
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.navbar-signup {
+  display: flex;
+  flex-direction: row;
+}
+.navbar-login {
+  display: flex;
+  flex-direction: row;
+}
+.navbar-login-guest {
+  display: flex;
+  flex-direction: row;
+}
+.navbar-burger-menu {
+  display: none;
+}
+.navbar-icon1 {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+}
+.navbar-mobile-menu {
+  top: 0;
+  right: 0;
+  width: 30%;
+  height: 100vh;
+  display: none;
+  padding: var(--dl-space-space-twounits);
+  z-index: 100;
+  position: absolute;
+  border-color: #7a7a7a;
+  border-width: 1px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--dl-color-theme-neutral-light1);
+}
+.navbar-nav {
+  display: block;
+  align-items: flex-end;
+  flex-direction: column;
+}
+.navbar-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--dl-space-space-threeunits);
+  justify-content: space-between;
+}
+.navbar-logo {
+  height: 3rem;
+}
+.navbar-close-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-icon3 {
+  width: var(--dl-size-size-xsmall);
+  height: var(--dl-size-size-xsmall);
+}
+.navbar-links2 {
+  gap: var(--dl-space-space-unit);
+  flex: 0 0 auto;
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+.navbar-buttons2 {
+  gap: var(--dl-space-space-oneandhalfunits);
+  display: flex;
+  margin-top: var(--dl-space-space-twounits);
+  align-items: center;
+  justify-content: center;
+}
+.navbar-fragment1 {
+  display: contents;
+}
+.navbar-text15 {
+  text-decoration: none;
+}
+.navbar-fragment2 {
+  display: contents;
+}
+.navbar-text16 {
+  text-decoration: none;
+}
+.navbar-fragment3 {
+  display: contents;
+}
+.navbar-fragment4 {
+  display: contents;
+}
+.navbar-text18 {
+  text-decoration: none;
+}
+.navbar-fragment5 {
+  display: contents;
+}
+.navbar-fragment6 {
+  display: contents;
+}
+.navbar-root-class-name {
+  height: 96px;
+}
+@media(max-width: 991px) {
+  .navbar-desktop-menu {
+    display: none;
+  }
+  .navbar-burger-menu {
+    display: flex;
+  }
+  .navbar-mobile-menu {
+    border-color: rgba(109, 109, 109, 0.47);
+    border-width: 1px;
+  }
+  .navbar-nav {
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-logo {
+    width: 86px;
+    height: 42px;
+  }
+  .navbar-links2 {
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-buttons2 {
+    gap: var(--dl-space-space-halfunit);
+    justify-content: center;
+  }
+}
+@media(max-width: 767px) {
+  .navbar-navbar-interactive {
+    padding-left: var(--dl-space-space-twounits);
+    padding-right: var(--dl-space-space-twounits);
+  }
+  .navbar-burger-menu {
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-mobile-menu {
+    border-color: rgba(123, 123, 123, 0.47);
+  }
+  .navbar-nav {
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-logo {
+    width: 88px;
+    height: 43px;
+  }
+  .navbar-links2 {
+    align-self: center;
+  }
+  .navbar-buttons2 {
+    flex-direction: column;
+  }
+}
+@media(max-width: 479px) {
+  .navbar-navbar-interactive {
+    padding: var(--dl-space-space-unit);
+    padding-right: 16px;
+  }
+  .navbar-mobile-menu {
+    padding: var(--dl-space-space-unit);
+    border-color: rgba(119, 119, 119, 0.47);
+  }
+  .navbar-nav {
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-logo {
+    width: 81px;
+    height: 39px;
+    padding: 0px;
+  }
+  .navbar-links2 {
+    align-self: center;
+  }
+  .navbar-buttons2 {
+    flex-direction: column;
+  }
+}

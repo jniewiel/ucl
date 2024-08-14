@@ -10,25 +10,28 @@
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
 
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application.tailwind', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
+
     <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
 
     <!-- Favicon -->
     <link rel="icon" type="image/ico" href="UCL_favicon.ico">
-    
+
+    <%= render 'shared/styling' %>
+
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
 
     <%= yield %>
+
+    <%= render'shared/footer' %>
   </body>
 </html>
