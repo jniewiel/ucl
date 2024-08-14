@@ -24,4 +24,6 @@ Rails.application.routes.draw do
 
   post 'save_cover_letter', to: 'cover_letters#save'
 
+  get 'contact_us', to: 'home#contact-form'
+
 end
