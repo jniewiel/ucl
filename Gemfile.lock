@@ -110,7 +110,7 @@ GEM
     color (1.8)
     color_namer (0.1.0)
       color (>= 1.4.1)
-    concurrent-ruby (1.3.3)
+    concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     crack (1.0.0)
       bigdecimal
@@ -223,7 +223,7 @@ GEM
     mini_mime (1.1.5)
     mini_racer (0.13.0)
       libv8-node (~> 22.5.1.0)
-    minitest (5.24.1)
+    minitest (5.25.0)
     msgpack (1.7.2)
     multipart-post (2.4.1)
     mutex_m (0.2.0)
@@ -474,7 +474,7 @@ DEPENDENCIES
   sqlite3 (~> 1.4)
   stimulus-rails
   table_print
-  tailwindcss-rails
+  tailwindcss-rails (~> 2.7, >= 2.7.2)
   turbo-rails
   tzinfo-data
   web-console

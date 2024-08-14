@@ -34,7 +34,7 @@ gem "redis", "~> 4.0"
 gem "ruby-openai"
 
 # Implementation of Tailwind CSS gem
-gem "tailwindcss-rails"
+gem 'tailwindcss-rails', '~> 2.7', '>= 2.7.2'
 
 gem "mini_racer"
 
