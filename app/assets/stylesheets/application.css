@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require navbar
+ *= require a1-footer
  */

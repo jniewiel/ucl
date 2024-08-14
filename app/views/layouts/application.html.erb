@@ -11,6 +11,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag 'application.tailwind', media: 'all', 'data-turbolinks-track': 'reload' %>
 
@@ -24,7 +25,6 @@
     <link rel="icon" type="image/ico" href="UCL_favicon.ico">
 
     <%= render 'shared/styling' %>
-
   </head>
 
   <body>

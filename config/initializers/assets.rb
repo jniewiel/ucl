@@ -12,3 +12,5 @@ Rails.application.config.assets.version = "1.0"
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
 Rails.application.config.assets.css_compressor = nil
+
+Rails.application.config.assets.precompile += %w( navbar.css a1-footer.css )
