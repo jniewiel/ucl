@@ -1,33 +1,39 @@
-
 <link href="./landing/hero.css" rel="stylesheet" />
 
 <div class="hero-container1 thq-section-padding">
-        <img alt="image" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8c2VhcmNofDZ8fGhhbmRzaGFrZXxlbnwwfHx8fDE3MjM1NzQ3MDV8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1500" class="hero-image" />
-        <div class="hero-max-width thq-section-max-width">
-          <div class="hero-container2">
-            <h2>
-              <span class="hero-fragment2">
-                <h2 class="hero-text4 thq-heading-2">
-                  Create ATS-Friendly Cover Letters in Minutes
-                </h2>
-              </span>
-            </h2>
-            <h3>
-              <span class="hero-fragment3">
-                <h3 class="hero-text5 thq-heading-3">
-                  AI-powered tool that matches your resume to job postings for
-                  tailored results
-                </h3>
-              </span>
-            </h3>
-          </div>
-          <button type="button" class="thq-button-filled hero-button">
-            <span>
-              <span class="hero-fragment1">
-                <span>Get Started Free</span>
-              </span>
-            </span>
-          </button>
-        </div>
-      </div>
+  <img alt="image" src="https://images.unsplash.com/photo-1521791136064-7986c2920216?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MTMyMXwwfDF8c2VhcmNofDZ8fGhhbmRzaGFrZXxlbnwwfHx8fDE3MjM1NzQ3MDV8MA&amp;ixlib=rb-4.0.3&amp;q=80&amp;w=1500" class="hero-image" />
+  <div class="hero-max-width thq-section-max-width">
+    <div class="hero-container2">
+      <h2>
+        <span class="hero-fragment2">
+          <h2 class="hero-text4 thq-heading-2">
+            Create ATS-Friendly Cover Letters in Minutes
+          </h2>
+        </span>
+      </h2>
+      <h3>
+        <span class="hero-fragment3">
+          <h3 class="hero-text5 thq-heading-3">
+            AI-powered tool that matches your resume to job postings for
+            tailored results
+          </h3>
+        </span>
+      </h3>
     </div>
+    <button type="button" class="thq-button-filled hero-button">
+      <span>
+        <span class="hero-fragment1">
+          <% if user_signed_in? %>
+            <% if current_user.email == "guest@example.com" %>
+              <span><%= link_to 'Try It Now', ucl_test_url, { :method => 'get' } %></span>
+            <% else %>
+              <span><%= link_to 'Get Started Now', ucl_new_url, { :method => 'get' } %></span>
+            <% end %>
+          <% else %>
+            <span><%= link_to 'Sign up', new_user_registration_path %></span>
+          <% end %>
+        </span>
+      </span>
+    </button>
+  </div>
+</div>

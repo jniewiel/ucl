@@ -13,14 +13,8 @@
 
           <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
             <nav class="navbar-links1">
-              <a href="#features" target="_self" rel="noreferrer noopener">
-                <span>Features</span>
-              </a>
-              <a href="#steps" target="_self" rel="noreferrer noopener">
-                <span>How It Works</span>
-              </a>
-              <a href="#pricing" target="_self" rel="noreferrer noopener">
-                <span>Pricing</span>
+              <a href="" target="_self" rel="noreferrer noopener">
+                <span><%= link_to 'Test it out', ucl_test_path, { :method => 'get'} %></span>
               </a>
             </nav>
 
@@ -54,24 +48,10 @@
               </div>
 
               <nav class="navbar-links2">
-                <a href="#features" target="_parent" rel="noreferrer noopener">
+                <a href="" target="_parent" rel="noreferrer noopener">
                   <span class="navbar-fragment4">
                     <span class="navbar-text18 thq-link thq-body-small">
-                      Features
-                    </span>
-                  </span>
-                </a>
-                <a href="#steps" target="_parent" rel="noreferrer noopener">
-                  <span class="navbar-fragment2">
-                    <span class="navbar-text16 thq-link thq-body-small">
-                      How It Works
-                    </span>
-                  </span>
-                </a>
-                <a href="#pricing" target="_parent" rel="noreferrer noopener">
-                  <span class="navbar-fragment1">
-                    <span class="navbar-text15 thq-link thq-body-small">
-                      Pricing
+                      <%= link_to 'Test it out', ucl_test_path, { :method => 'get'} %>
                     </span>
                   </span>
                 </a>
@@ -101,14 +81,17 @@
 
           <div data-thq="thq-navbar-nav" class="navbar-desktop-menu">
             <nav class="navbar-links1">
-              <a href="#features" target="_self" rel="noreferrer noopener">
-                <span>Features</span>
+              <a href="" target="_self" rel="noreferrer noopener">
+                <span><%= link_to 'Resumes', resumes_url, { :method => 'get' } %></span>
               </a>
-              <a href="#steps" target="_self" rel="noreferrer noopener">
-                <span>How It Works</span>
+              <a href="" target="_self" rel="noreferrer noopener">
+                <span><%= link_to 'Job Postings', job_postings_url, { :method => 'get' } %></span>
               </a>
-              <a href="#pricing" target="_self" rel="noreferrer noopener">
-                <span>Pricing</span>
+              <a href="" target="_self" rel="noreferrer noopener">
+                <span><%= link_to 'Cover Letters', cover_letters_url, { :method => 'get' } %></span>
+              </a>
+              <a href="" target="_self" rel="noreferrer noopener">
+                <span><%= link_to 'Create New Letter', ucl_new_url, { :method => 'get' } %></span>
               </a>
             </nav>
 
@@ -142,24 +125,31 @@
               </div>
 
               <nav class="navbar-links2">
-                <a href="#features" target="_parent" rel="noreferrer noopener">
+                <a href="" target="_parent" rel="noreferrer noopener">
                   <span class="navbar-fragment4">
                     <span class="navbar-text18 thq-link thq-body-small">
-                      Features
+                      <%= link_to 'Resumes', resumes_url, { :method => 'get' } %>
                     </span>
                   </span>
                 </a>
-                <a href="#steps" target="_parent" rel="noreferrer noopener">
+                <a href="" target="_parent" rel="noreferrer noopener">
                   <span class="navbar-fragment2">
                     <span class="navbar-text16 thq-link thq-body-small">
-                      How It Works
+                      <%= link_to 'Job Postings', job_postings_url, { :method => 'get' } %>
                     </span>
                   </span>
                 </a>
-                <a href="#pricing" target="_parent" rel="noreferrer noopener">
+                <a href="" target="_parent" rel="noreferrer noopener">
                   <span class="navbar-fragment1">
                     <span class="navbar-text15 thq-link thq-body-small">
-                      Pricing
+                      <%= link_to 'Cover Letters', cover_letters_url, { :method => 'get' } %>
+                    </span>
+                  </span>
+                </a>
+                <a href="" target="_parent" rel="noreferrer noopener">
+                  <span class="navbar-fragment1">
+                    <span class="navbar-text15 thq-link thq-body-small">
+                      <%= link_to 'Create New Letter', ucl_new_url, { :method => 'get' } %>
                     </span>
                   </span>
                 </a>
