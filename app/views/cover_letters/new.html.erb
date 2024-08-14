@@ -21,7 +21,7 @@
   </style>
 <% end %>
 
-<div class="container mx-auto mt-5">
+<div class="container mx-auto">
   <div class="flex justify-center">
     <div class="w-full max-w-md">
       <h1 class="text-center mb-4 text-2xl font-bold">Unique Cover Letter Generator</h1>
@@ -32,8 +32,10 @@
 
           <div class="mt-1 relative rounded-md shadow-sm">
             <%= text_area_tag :resume, nil, { :rows => 10, :class => 'form-textarea mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm', :required => true, :id => 'resume-textarea' } %>
+          </div>
 
-            <button type="button" class="ml-2 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="load-resume-btn">Load Resume</button>
+          <div class="mt-2 text-center">
+            <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="load-resume-btn">Load Resume</button>
           </div>
         </div>
 
@@ -42,8 +44,10 @@
 
           <div class="mt-1 relative rounded-md shadow-sm">
             <%= text_area_tag :job_description, nil, { :rows => 10, :class => 'form-textarea mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm', :required => true, :id => 'job-description-textarea' } %>
+          </div>
 
-            <button type="button" class="ml-2 bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="load-job-description-btn">Load Job Description</button>
+          <div class="mt-2 text-center">
+            <button type="button" class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" id="load-job-description-btn">Load Job Description</button>
           </div>
         </div>
 
@@ -51,7 +55,7 @@
         <%= hidden_field_tag :job_posting_id, nil, { :id => 'job_posting_id' } %>
 
         <div class="text-center">
-          <%= submit_tag 'Generate Cover Letter', { :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded', :id => 'submit-btn' } %>
+          <%= submit_tag 'Generate Cover Letter', { :class => 'bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 mt-12 rounded-full', :id => 'submit-btn' } %>
         </div>
       <% end %>
 
@@ -63,11 +67,15 @@
         <div id="generated-cover-letter" class="border p-3 mb-3" contenteditable="true"></div>
 
         <div class="flex justify-center mb-3 space-x-3">
-          <button id="copy-btn" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Copy to Clipboard</button>
+          <button id="copy-btn" class="flex-1 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center">
+            Copy to Clipboard
+          </button>
 
-          <button type="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="save-cover-letter-btn">Save Cover Letter</button>
+          <button type="button" id="save-cover-letter-btn" class="flex-1 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center">
+            Save Cover Letter
+          </button>
 
-          <%= link_to 'Reset Form', ucl_new_path, { :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' } %>
+          <%= link_to 'Reset Form', ucl_new_path, class: 'flex-1 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded flex items-center justify-center' %>
         </div>
       </div>
     </div>
@@ -95,9 +103,7 @@
         </div>
       </div>
       <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-        <button type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm" onclick="document.getElementById('resumeModal').classList.add('hidden')">
-          Close
-        </button>
+        <button type="button" class="w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm" onclick="document.getElementById('resumeModal').classList.add('hidden')">Close</button>
       </div>
     </div>
   </div>
