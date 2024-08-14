@@ -1,39 +1,74 @@
 <!-- app/views/home/index.html.erb -->
 
-<div class="container mt-5">
-  <h1 class="text-center">Welcome to UCL</h1>
+<%= render 'shared/landing/hero' %>
 
-  <!--change 'if' order to have guest first, user second to fix alert box-->
+<%= render 'shared/landing/benefits' %>
 
-  <% if user_signed_in? %>
-    <% if current_user.email == "guest@example.com" %>
-      <div class="alert alert-info text-center">
-        <p>Welcome, Guest User!</p>
-        <%= link_to 'Test it out', ucl_test_path, method: :get, class: 'btn btn-success' %>
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
-      </div>
-    <% else %>
-      <div class="mt-2 text-center d-grid gap-2 d-md-block">
-        <p>Welcome, <%= current_user.email %>!</p>
+<%= render 'shared/landing/steps' %>
 
-        <%= link_to 'Test it out', ucl_new_path, method: :get, class: 'btn btn-success' %>
+<%= render 'shared/landing/highlight' %>
 
-        <div class="mt-2 text-center d-grid gap-2 d-md-block">
-          <%= link_to 'See resumes', resumes_url, method: :get, class: 'btn btn-primary' %>
-          <%= link_to 'See job postings', job_postings_url, method: :get, class: 'btn btn-primary' %>
-          <%= link_to 'See cover letters', cover_letters_url, method: :get, class: 'btn btn-primary' %>
-        </div>
+<%= render 'shared/landing/testimonial' %>
 
-        <div class="mt-2 text-center d-grid gap-2 d-md-block">
-          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
-        </div>
-      </div>
-    <% end %>
-  <% else %>
-    <div class="text-center">
-      <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary mx-2' %>
-      <%= link_to 'Log in', new_user_session_path, class: 'btn btn-secondary mx-2' %>
-      <%= link_to 'Log in as Guest', guest_login_path, class: 'btn btn-warning mx-2' %>
+<%= render 'shared/landing/pricing' %>
+
+<%= render 'shared/landing/faq' %>
+
+<%= render 'shared/landing/cta' %>
+
+<div class="mx-auto bg-gradient-to-r from-white to-purple-900 w-screen">
+  <div class="relative px-6 pt-14 lg:px-8">
+    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"></div>
     </div>
-  <% end %>
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+      <div class="text-center">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Create ATS-Friendly Cover Letters in Minutes</h1>
+
+        <p class="mt-6 text-lg leading-8 text-gray-800">AI-powered tool that matches your resume to job postings for tailored results</p>
+
+        <% if user_signed_in? %>
+          <% if current_user.email == "guest@example.com" %>
+            <div class="bg-blue-100 border border-blue-400 text-blue-700 px-4 py-4 rounded text-center">
+              <p>Welcome, Guest User!</p>
+              <%= link_to 'Test it out', ucl_test_path, { :method => 'get', :class => 'bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded' } %>
+              <%= link_to 'Log out', destroy_user_session_path, { :method => 'delete', :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' } %>
+            </div>
+          <% else %>
+            <div class="mt-2 text-center space-y-4">
+              <p class="mb-4">Welcome, <%= current_user.email %>!</p>
+
+              <%= link_to 'Test it out', ucl_new_path, { :method => 'get', :class => 'bg-green-500 hover:bg-green-700:scale-150 text-white font-bold py-2 px-4 rounded' } %>
+
+              <button class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:scale-105 hover:shadow-lg;">
+                Click me!
+              </button>
+
+              <div class="mt-4 space-y-4">
+                <%= link_to 'See resumes', resumes_url, { :method => 'get', :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
+                <%= link_to 'See job postings', job_postings_url, { :method => 'get', :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
+                <%= link_to 'See cover letters', cover_letters_url, { :method => 'get', :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
+              </div>
+
+              <div class="mt-4 space-y-2">
+                <%= link_to 'Log out', destroy_user_session_path, { :method => 'delete', :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' } %>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <div class="text-center space-x-2">
+            <%= link_to 'Sign up', new_user_registration_path, { :class => 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' } %>
+            <%= link_to 'Log in', new_user_session_path, { :class => 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded' } %>
+            <%= link_to 'Log in as Guest', guest_login_path, { :class => 'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded' } %>
+          </div>
+        <% end %>
+
+        <div class="mt-10 flex items-center justify-center gap-x-6">
+          <button class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:scale-105 hover:shadow-lg;">
+            Click me!
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

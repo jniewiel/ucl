@@ -33,7 +33,8 @@ gem "redis", "~> 4.0"
 # Implementation of OpenAI Ruby gem
 gem "ruby-openai"
 
-gem "bootstrap"
+# Implementation of Tailwind CSS gem
+gem "tailwindcss-rails"
 
 gem "mini_racer"
 

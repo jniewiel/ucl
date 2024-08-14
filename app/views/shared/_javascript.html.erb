@@ -1,8 +1,5 @@
 <!-- app/views/shared/_javascript.html.erb -->
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
 <!-- Loading Placeholder (JS) -->
 <script>
   $(document).ready(function() {
@@ -17,8 +14,8 @@
       var coverLetterContent = $('#generated-cover-letter');
 
       submitBtn.prop('disabled', true);
-      loadingPlaceholder.removeClass('d-none');
-      coverLetterContainer.addClass('d-none');
+      loadingPlaceholder.removeClass('hidden');
+      coverLetterContainer.addClass('hidden');
 
       $.ajax({
         url: form.attr('action'),
@@ -26,14 +23,14 @@
         data: form.serialize(),
         dataType: 'json',
         success: function(response) {
-          loadingPlaceholder.addClass('d-none');
+          loadingPlaceholder.addClass('hidden');
           coverLetterContent.html(response.cover_letter);
-          coverLetterContainer.removeClass('d-none');
+          coverLetterContainer.removeClass('hidden');
           submitBtn.prop('disabled', false);
         },
         error: function() {
           alert('An error occurred while generating the cover letter. Please try again.');
-          loadingPlaceholder.addClass('d-none');
+          loadingPlaceholder.addClass('hidden');
           submitBtn.prop('disabled', false);
         }
       });
@@ -64,18 +61,18 @@
             resumeList.empty(); // Clear existing list items
 
             response.resumes.forEach(function(resume) {
-              var listItem = $('<li class="list-group-item list-group-item-action">')
+              var listItem = $('<li class="cursor-pointer hover:bg-gray-200 p-2">')
                 .text(resume.resume)
                 .data('content', resume.extracted_text)
                 .on('click', function() {
                   $('#resume-textarea').val($(this).data('content'));
-                  $('#resumeModal').modal('hide');
+                  $('#resumeModal').addClass('hidden');
                 });
 
               resumeList.append(listItem);
             });
 
-            $('#resumeModal').modal('show');
+            $('#resumeModal').removeClass('hidden');
           } else {
             alert('No resumes found.');
           }
@@ -101,7 +98,7 @@
             jobDescriptionList.empty(); // Clear existing list items
 
             response.job_postings.forEach(function(job) {
-              var listItem = $('<li class="list-group-item list-group-item-action">')
+              var listItem = $('<li class="cursor-pointer hover:bg-gray-200 p-2">')
                 .text(job.job_posting)
                 .data('description', job.job_description)
                 .data('job_posting_id', job.id) // Store job posting ID in data attribute for later use
@@ -109,8 +106,8 @@
                   $('#job-description-textarea')
                     .val($(this).data('description'))
                     .data('job_posting_id', $(this).data('job_posting_id')); // Store job posting ID in textarea for later use
-                  $('#jobDescriptionModal').modal('hide');
-                  
+                  $('#jobDescriptionModal').addClass('hidden'); // Tailwind equivalent to hide modal
+
                   // Save job_posting_id in a hidden input field
                   $('#job_posting_id').val($(this).data('job_posting_id'));
                 });
@@ -118,7 +115,7 @@
               jobDescriptionList.append(listItem);
             });
 
-            $('#jobDescriptionModal').modal('show');
+            $('#jobDescriptionModal').removeClass('hidden'); // Tailwind equivalent to show modal
           } else {
             alert('No job descriptions found.');
           }

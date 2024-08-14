@@ -1,0 +1,264 @@
+.benefits-layout301 {
+  gap: var(--dl-space-space-fiveunits);
+  display: flex;
+  position: relative;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: column;
+  justify-content: center;
+}
+.benefits-max-width {
+  gap: var(--dl-space-space-threeunits);
+  display: flex;
+  padding: var(--dl-space-space-unit);
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.benefits-row {
+  width: 100%;
+}
+.benefits-feature1 {
+  gap: var(--dl-space-space-twounits);
+  flex: 1;
+  width: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  box-shadow: 5px 5px 10px 0px #a59b9b;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: var(--dl-radius-radius-cardradius);
+  flex-direction: column;
+  background-color: #D9D9D9;
+  text-align: center;
+}
+.benefits-content1 {
+  align-self: stretch;
+  align-items: center;
+}
+.benefits-section-title1 {
+  gap: var(--dl-space-space-halfunit);
+  align-self: stretch;
+  align-items: center;
+}
+.benefits-feature2 {
+  gap: var(--dl-space-space-twounits);
+  flex: 1;
+  width: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  box-shadow: 5px 5px 10px 0px #a59b9b;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: var(--dl-radius-radius-cardradius);
+  flex-direction: column;
+  background-color: #D9D9D9;
+  text-align: center;
+}
+.benefits-content2 {
+  align-self: stretch;
+  align-items: center;
+}
+.benefits-section-title2 {
+  gap: var(--dl-space-space-halfunit);
+  align-self: stretch;
+  align-items: center;
+}
+.benefits-feature3 {
+  gap: var(--dl-space-space-twounits);
+  flex: 1;
+  width: auto;
+  display: flex;
+  overflow: hidden;
+  max-width: 600px;
+  box-shadow: 5px 5px 10px 0px #a59b9b;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: var(--dl-radius-radius-cardradius);
+  flex-direction: column;
+  background-color: #D9D9D9;
+  text-align: center;
+}
+.benefits-content3 {
+  align-self: stretch;
+  align-items: center;
+}
+.benefits-section-title3 {
+  gap: var(--dl-space-space-halfunit);
+  align-self: stretch;
+  align-items: center;
+}
+.benefits-fragment1 {
+  display: contents;
+}
+.benefits-text2 {
+  font-size: 18px;
+  text-align: center;
+  padding-left: var(--dl-space-space-unit);
+  padding-right: var(--dl-space-space-unit);
+  padding-bottom: var(--dl-space-space-oneandhalfunits);
+}
+.benefits-fragment2 {
+  display: contents;
+}
+.benefits-text3 {
+  font-size: 24px;
+  margin-top: -8px;
+  text-align: center;
+}
+.benefits-fragment3 {
+  display: contents;
+}
+.benefits-text4 {
+  text-align: center;
+}
+.benefits-fragment4 {
+  display: contents;
+}
+.benefits-text5 {
+  font-size: 18px;
+  text-align: center;
+  padding-left: var(--dl-space-space-unit);
+  padding-right: var(--dl-space-space-unit);
+  padding-bottom: var(--dl-space-space-oneandhalfunits);
+}
+.benefits-fragment5 {
+  display: contents;
+}
+.benefits-text6 {
+  font-size: 24px;
+  margin-top: -8px;
+  text-align: center;
+}
+.benefits-fragment6 {
+  display: contents;
+}
+.benefits-text7 {
+  font-size: 18px;
+  text-align: center;
+  padding-left: var(--dl-space-space-unit);
+  padding-right: var(--dl-space-space-unit);
+  padding-bottom: var(--dl-space-space-oneandhalfunits);
+}
+.benefits-fragment7 {
+  display: contents;
+}
+.benefits-text8 {
+  font-size: 24px;
+  margin-top: -8px;
+  text-align: center;
+}
+@media(max-width: 991px) {
+  .benefits-row {
+    width: auto;
+    height: 100vh;
+    padding: var(--dl-space-space-twounits);
+    overflow-y: scroll;
+    align-items: center;
+    flex-direction: column;
+    scroll-snap-type: y mandatory;
+  }
+  .benefits-feature1 {
+    width: 100%;
+    height: 99vh;
+    overflow-y: scroll;
+    border-radius: var(--dl-radius-radius-buttonradius);
+    justify-content: flex-start;
+    scroll-snap-align: start;
+  }
+  .benefits-content1 {
+    gap: var(--dl-space-space-twounits);
+    align-self: stretch;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .benefits-section-title1 {
+    gap: var(--dl-space-space-unit);
+  }
+  .benefits-feature2 {
+    width: 100%;
+    height: 99vh;
+    overflow-y: scroll;
+    border-radius: var(--dl-radius-radius-buttonradius);
+    justify-content: flex-start;
+    scroll-snap-align: start;
+  }
+  .benefits-section-title2 {
+    gap: var(--dl-space-space-unit);
+  }
+  .benefits-feature3 {
+    width: 100%;
+    height: 99vh;
+    overflow-y: scroll;
+    border-radius: var(--dl-radius-radius-buttonradius);
+    justify-content: flex-start;
+    scroll-snap-align: start;
+  }
+  .benefits-section-title3 {
+    gap: var(--dl-space-space-unit);
+  }
+  .benefits-text2 {
+    font-size: 36px;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+  }
+  .benefits-text3 {
+    font-size: 42px;
+    margin-top: var(--dl-space-space-twounits);
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+  .benefits-text5 {
+    font-size: 36px;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+  }
+  .benefits-text6 {
+    font-size: 42px;
+    margin-top: var(--dl-space-space-twounits);
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+  .benefits-text7 {
+    font-size: 36px;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    padding-left: var(--dl-space-space-oneandhalfunits);
+    padding-right: var(--dl-space-space-oneandhalfunits);
+  }
+  .benefits-text8 {
+    font-size: 42px;
+    margin-top: var(--dl-space-space-twounits);
+    margin-left: var(--dl-space-space-unit);
+    margin-right: var(--dl-space-space-unit);
+  }
+}
+@media(max-width: 767px) {
+  .benefits-text4 {
+    text-align: center;
+  }
+}
+@media(max-width: 479px) {
+  .benefits-max-width {
+    gap: var(--dl-space-space-oneandhalfunits);
+  }
+  .benefits-text2 {
+    font-size: 30px;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .benefits-text5 {
+    font-size: 30px;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+  .benefits-text7 {
+    font-size: 30px;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    text-align: center;
+  }
+}
