@@ -15,7 +15,7 @@
             <li class="mb-4 p-4 border-b last:border-b-0">
               <div class="flex justify-between items-center">
                 <div>
-                  <%= link_to "Job Posting ##{job_posting.id}", job_posting_path(job_posting), class: 'text-blue-500 hover:text-blue-700' %>
+                  <%= link_to job_posting.job_posting, job_posting_path(job_posting), class: 'text-blue-500 hover:text-blue-700' %>
                 </div>
                 <div class="space-x-2">
                   <%= link_to 'Edit', edit_job_posting_path(job_posting), class: 'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded' %>
@@ -29,4 +29,3 @@
     </div>
   </div>
 </div>
-
