@@ -1,12 +1,23 @@
 <!-- app/views/resumes/show.html.erb -->
 
-<p class="text-green-600"><%= notice %></p>
+<div class="container mx-auto pt-16">
+  <div class="flex justify-center">
+    <div class="w-full max-w-md">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <p class="text-green-600 mb-4"><%= notice %></p>
 
-<%= render @resume %>
+        <%= render @resume %>
+      </div>
 
-<div class="mt-4">
-  <%= link_to "Edit this resume", edit_resume_path(@resume), { :class => 'text-blue-600 hover:text-blue-800 underline' } %> |
-  <%= link_to "Back to resumes", resumes_path, { :class => 'text-blue-600 hover:text-blue-800 underline' } %>
+      <div class="mt-8 text-center">
+        <%= link_to "Edit this resume", edit_resume_path(@resume), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+        <span class="mx-2">|</span>
+        <%= link_to "Back to resumes", resumes_path, class: 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-block' %>
 
-  <%= button_to "Destroy this resume", @resume, { :method => :delete, :class => 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-2' } %>
+        <div class="mt-4">
+          <%= button_to "Destroy this resume", @resume, method: :delete, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

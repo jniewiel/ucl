@@ -1,15 +1,31 @@
 <!-- app/views/cover_letters/index.html.erb -->
 
-<h1>Your Cover Letters</h1>
+<div class="container mx-auto pt-16"> <!-- Added pt-16 to prevent fixed navbar from covering content -->
+  <div class="flex justify-center">
+    <div class="w-full max-w-md">
+      <h1 class="text-center mb-6 text-2xl font-bold">Your Cover Letters</h1>
 
-<%= link_to 'New Cover Letter', new_cover_letter_path %>
+      <div class="text-center mb-6">
+        <%= link_to 'New Cover Letter', new_cover_letter_path, class: 'bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded' %>
+      </div>
 
-<ul>
-  <% @cover_letters.each do |cover_letter| %>
-    <li>
-      <%= link_to cover_letter.id, cover_letter_path(cover_letter) %>
-      <%= link_to 'Edit', edit_cover_letter_path(cover_letter) %>
-      <%= link_to 'Delete', cover_letter_path(cover_letter), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <ul class="list-none">
+          <% @cover_letters.each do |cover_letter| %>
+            <li class="mb-4 p-4 border-b last:border-b-0">
+              <div class="flex justify-between items-center">
+                <div>
+                  <%= link_to "Cover Letter ##{cover_letter.id}", cover_letter_path(cover_letter), class: 'text-blue-500 hover:text-blue-700' %>
+                </div>
+                <div class="space-x-2">
+                  <%= link_to 'Edit', edit_cover_letter_path(cover_letter), class: 'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded' %>
+                  <%= link_to 'Delete', cover_letter_path(cover_letter), method: :delete, data: { confirm: 'Are you sure?' }, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded' %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
