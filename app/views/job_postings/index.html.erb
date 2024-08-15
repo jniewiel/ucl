@@ -1,15 +1,32 @@
 <!-- app/views/job_postings/index.html.erb -->
 
-<h1>Job Postings</h1>
+<div class="container mx-auto pt-16"> <!-- Added pt-16 to prevent fixed navbar from covering content -->
+  <div class="flex justify-center">
+    <div class="w-full max-w-md">
+      <h1 class="text-center mb-6 text-2xl font-bold">Job Postings</h1>
 
-<%= link_to 'New Job Posting', new_job_posting_path %>
+      <div class="text-center mb-6">
+        <%= link_to 'New Job Posting', new_job_posting_path, class: 'bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded' %>
+      </div>
 
-<ul>
-  <% @job_postings.each do |job_posting| %>
-    <li>
-      <%= link_to job_posting.id, job_posting_path(job_posting) %>
-      <%= link_to 'Edit', edit_job_posting_path(job_posting) %>
-      <%= link_to 'Delete', job_posting_path(job_posting), method: :delete, data: { confirm: 'Are you sure?' } %>
-    </li>
-  <% end %>
-</ul>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <ul class="list-none">
+          <% @job_postings.each do |job_posting| %>
+            <li class="mb-4 p-4 border-b last:border-b-0">
+              <div class="flex justify-between items-center">
+                <div>
+                  <%= link_to "Job Posting ##{job_posting.id}", job_posting_path(job_posting), class: 'text-blue-500 hover:text-blue-700' %>
+                </div>
+                <div class="space-x-2">
+                  <%= link_to 'Edit', edit_job_posting_path(job_posting), class: 'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded' %>
+                  <%= link_to 'Delete', job_posting_path(job_posting), method: :delete, data: { confirm: 'Are you sure?' }, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded' %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,10 +1,25 @@
-<p style="color: green"><%= notice %></p>
+<!-- app/views/job_postings/show.html.erb -->
 
-<%= render @job_posting %>
+<div class="container mx-auto pt-16">
+  <div class="flex justify-center">
+    <div class="w-full max-w-md">
+      <!-- Display notice -->
+      <p class="text-green-600 mb-4"><%= notice %></p>
 
-<div>
-  <%= link_to "Edit this job posting", edit_job_posting_path(@job_posting) %> |
-  <%= link_to "Back to job postings", job_postings_path %>
+      <!-- Render job posting details -->
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <%= render @job_posting %>
+      </div>
 
-  <%= button_to "Destroy this job posting", @job_posting, method: :delete %>
+      <!-- Action buttons -->
+      <div class="mt-8 text-center space-x-2">
+        <%= link_to "Edit this job posting", edit_job_posting_path(@job_posting), class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+        <%= link_to "Back to job postings", job_postings_path, class: 'bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+
+        <div class="mt-4">
+          <%= button_to "Destroy this job posting", @job_posting, method: :delete, class: 'bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded' %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

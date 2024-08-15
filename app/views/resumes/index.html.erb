@@ -1,12 +1,12 @@
 <!-- app/views/resumes/index.html.erb -->
 
-<div class="container mx-auto pt-16">
+<div class="container mx-auto pt-16"> <!-- Added pt-16 to prevent fixed navbar from covering content -->
   <div class="flex justify-center">
     <div class="w-full max-w-md">
       <h1 class="text-center mb-6 text-2xl font-bold">Your Resumes</h1>
 
       <div class="text-center mb-6">
-        <%= link_to 'New Resume', new_resume_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded inline-block' %>
+        <%= link_to 'New Resume', new_resume_path, class: 'bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded' %>
       </div>
 
       <div class="bg-white p-6 rounded-lg shadow-md">
@@ -15,7 +15,7 @@
             <li class="mb-4 p-4 border-b last:border-b-0">
               <div class="flex justify-between items-center">
                 <div>
-                  <%= link_to resume.id, resume_path(resume), class: 'text-blue-600 hover:text-blue-800' %>
+                  <%= link_to resume.id, resume_path(resume), class: 'text-blue-500 hover:text-blue-700' %>
                 </div>
                 <div class="space-x-2">
                   <%= link_to 'Edit', edit_resume_path(resume), class: 'bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-1 px-3 rounded' %>
@@ -29,3 +29,4 @@
     </div>
   </div>
 </div>
+
