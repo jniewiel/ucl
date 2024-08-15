@@ -37,7 +37,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   align-self: stretch;
-  align-items: center;
+  align-items: left;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -80,7 +80,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   align-self: stretch;
-  align-items: center;
+  align-items: left;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -123,7 +123,7 @@
   display: flex;
   padding: var(--dl-space-space-unit);
   align-self: stretch;
-  align-items: center;
+  align-items: left;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -162,21 +162,21 @@
 }
 .faq-text15 {
   font-style: normal;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 .faq-fragment2 {
   display: contents;
 }
 .faq-text16 {
-  text-align: center;
+  text-align: left;
 }
 .faq-fragment3 {
   display: contents;
 }
 .faq-text17 {
   font-style: normal;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 .faq-fragment4 {
@@ -184,7 +184,7 @@
 }
 .faq-text18 {
   font-style: normal;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
 }
 .faq-fragment5 {
@@ -194,5 +194,5 @@
   display: contents;
 }
 .faq-text20 {
-  text-align: center;
+  text-align: left;
 }
