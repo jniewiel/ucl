@@ -127,4 +127,7 @@
     flex-direction: column;
     justify-content: center;
   }
+  .a1-footer-social-links {
+    margin-right: 41px;
+  }
 }
