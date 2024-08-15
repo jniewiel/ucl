@@ -5,15 +5,25 @@
     <div class="cta-column">
       <div class="cta-content">
         <span class="cta-text1">Ready to Land Your Dream Job?</span>
+
         <p class="cta-text2">Create Your Cover Letter Now</p>
-        <div class="cta-actions">
-          <button type="button" class="cta-button1 thq-button-filled">
-            <span>Log In</span>
-          </button>
-          <button type="button" class="cta-button2 thq-button-outline">
-            <span>Sign Up</span>
-          </button>
-        </div>
+
+        <button type="button" class="thq-button-filled hero-button">
+          <span>
+            <span class="hero-fragment1">
+              <% if user_signed_in? %>
+                <% if current_user.email == "guest@example.com" %>
+                  <span><%= link_to 'Try It Now', ucl_test_url, { :method => 'get' } %></span>
+                <% else %>
+                  <span><%= link_to 'Get Started Now', ucl_new_url, { :method => 'get' } %></span>
+                <% end %>
+              <% else %>
+                <span><%= link_to 'Sign up', new_user_registration_path %></span>
+              <% end %>
+            </span>
+          </span>
+        </button>
+
       </div>
     </div>
   </div>
