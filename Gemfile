@@ -40,6 +40,9 @@ gem "mini_racer"
 
 gem "sassc-rails"
 
+# Implementation of Rubocop linter
+gem "rubocop"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
