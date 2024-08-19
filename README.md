@@ -10,7 +10,6 @@ The UCL (Unique Cover Letter) Generator is an AI-powered tool designed to stream
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
@@ -80,10 +79,6 @@ Contributions are welcome! Please follow these guidelines:
 
 5. Open a pull request
 
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
 ## Contact
 
 Jan Niewielski - [jann.developer@gmail.com](mailto:jann.developer@gmail.com)
@@ -91,6 +86,10 @@ Jan Niewielski - [jann.developer@gmail.com](mailto:jann.developer@gmail.com)
 Project Link: [https://github.com/users/jniewiel/projects/1](https://github.com/users/jniewiel/projects/1)
 
 <!--
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
 ## Acknowledgements
 
 (Any acknowledgements or credits will be added here)
