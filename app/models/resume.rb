@@ -19,4 +19,7 @@
 #
 class Resume < ApplicationRecord
   belongs_to :user
+
+  # Add validation for presence of the 'resume' attribute
+  validates :resume, presence: true
 end
