@@ -82,8 +82,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
   gem "webdrivers"
 end
 
@@ -114,10 +112,14 @@ end
 
 group :development, :test do
   gem "rspec-rails", "~> 6.0.0"
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "factory_bot_rails"
 end
 
 group :test do
   gem "draft_matchers"
   gem "rspec-html-matchers"
   gem "webmock"
+  gem "rails-controller-testing"
 end
