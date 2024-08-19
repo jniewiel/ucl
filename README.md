@@ -126,6 +126,8 @@ Contributions are welcome! Please follow these guidelines:
 
 ## License
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://github.com/jniewiel/ucl/blob/main/LICENSE)
+
 Distributed under the MIT License. See `LICENSE` for more information.
 
 
