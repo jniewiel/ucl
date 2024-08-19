@@ -32,6 +32,7 @@ class ResumesController < ApplicationController
     if @resume.save
       redirect_to @resume, notice: 'Resume was successfully created.'
     else
+      Rails.logger.debug "Rendering new template due to validation errors"
       render :new
     end
   end
@@ -45,6 +46,7 @@ class ResumesController < ApplicationController
     if @resume.update(resume_params)
       redirect_to @resume, notice: 'Resume was successfully updated.'
     else
+      Rails.logger.debug "Rendering edit template due to validation errors"
       render :edit
     end
   end
