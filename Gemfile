@@ -43,6 +43,9 @@ gem "sassc-rails"
 # Implementation of Rubocop linter
 gem "rubocop"
 
+# Implementation of Pundit gem
+gem "pundit"
+
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
