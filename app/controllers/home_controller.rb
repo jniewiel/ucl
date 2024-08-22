@@ -7,8 +7,12 @@ class HomeController < ApplicationController
   end
 
   def guest_login
+    # Authorize the guest login action using Pundit policy
     authorize :home, :guest_login?
+
+    # Find or create a guest user with a predefined email
     guest_user = User.find_or_create_by!(email: "guest@example.com") do |user|
+      # Set a random password for the guest user
       user.password = SecureRandom.hex(10)
       user.password_confirmation = user.password
     end
@@ -18,12 +22,16 @@ class HomeController < ApplicationController
   end
 
   def ucl_test
+    # Authorize the UCL test action using Pundit policy
     authorize :home, :ucl_test?
+    # Redirect to the 'home#test' path with a notice
     redirect_to 'home#test', notice: "Testing UCL."
   end
 
   def ucl_new
+    # Authorize the UCL new action using Pundit policy
     authorize :home, :ucl_new?
+    # Redirect to the 'cover_letters#new' path with a notice
     redirect_to 'cover_letters#new', notice: "Creating new UCL."
   end
 end
