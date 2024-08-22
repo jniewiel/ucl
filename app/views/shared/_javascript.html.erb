@@ -134,9 +134,15 @@
 
       console.log("Job Posting ID:", jobPostingId);
 
+      // Get CSRF token from the meta tag in the HTML
+      var csrfToken = $('meta[name="csrf-token"]').attr('content');
+
       $.ajax({
         url: '/save_cover_letter',
         method: 'post',
+        headers: {
+          'X-CSRF-Token': csrfToken
+        },
         data: {
           cover_letter: coverLetterContent,
           job_posting_id: jobPostingId

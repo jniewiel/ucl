@@ -5,9 +5,7 @@ class ResumesController < ApplicationController
 
   before_action :authenticate_user! # Ensure the user is logged in before any action
   before_action :set_resume, only: %i[show edit update destroy] # Find the resume for actions that require it
-  after_action :verify_authorized, except: :index # Verify authorization was done after actions except index
-  after_action :verify_policy_scoped, only: :index # Verify that policy scope was applied for the index action
-
+  
   def index
     # Fetch resumes based on the policy scope
     @resumes = policy_scope(Resume)
@@ -15,25 +13,25 @@ class ResumesController < ApplicationController
 
   def select
     # Fetch resumes based on the policy scope and render as JSON
-    @resumes = policy_scope(Resume)
-    render json: { resumes: @resumes }
+    user_resumes = current_user.resumes
+    render json: { resumes: user_resumes }
   end
 
   def show
     # Authorize access to the resume
-    authorize @resume
+    authorize(@resume)
   end
 
   def new
     # Initialize a new resume and authorize it
     @resume = Resume.new
-    authorize @resume
+    authorize(@resume)
   end
 
   def create
     # Build a new resume associated with the current user and authorize it
     @resume = current_user.resumes.build(resume_params)
-    authorize @resume
+    authorize(@resume)
 
     if @resume.save
       # Redirect to the resume's show page with a success notice
@@ -66,7 +64,7 @@ class ResumesController < ApplicationController
 
   def destroy
     # Authorize access to destroy the resume
-    authorize @resume
+    authorize(@resume)
     @resume.destroy
     # Redirect to the resumes index page with a success notice
     redirect_to resumes_url, notice: 'Resume was successfully destroyed.'
