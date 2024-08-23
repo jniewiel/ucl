@@ -5,6 +5,7 @@ class ResumesController < ApplicationController
 
   before_action :authenticate_user! # Ensure the user is logged in before any action
   before_action :set_resume, only: %i[show edit update destroy] # Find the resume for actions that require it
+  # Comment: Use the before_action authorize for Pundit here
   
   def index
     # Fetch resumes based on the policy scope
