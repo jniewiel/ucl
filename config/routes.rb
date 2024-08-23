@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "ucl_test", to: "home#test"
   get "ucl_new", to: "cover_letters#new"
 
+  # Comment: Maybe you can consolidate these routes by moving most of the logic from the controllers to the models
+
   get "user_resumes", to: "resumes#select"
 
   get "user_job_postings", to: "job_postings#select"

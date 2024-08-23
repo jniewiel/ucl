@@ -11,6 +11,7 @@ class HomeController < ApplicationController
     authorize :home, :guest_login?
 
     # Find or create a guest user with a predefined email
+    ## Comment: Move a service object to handle the guest user creation
     guest_user = User.find_or_create_by!(email: "guest@example.com") do |user|
       # Set a random password for the guest user
       user.password = SecureRandom.hex(10)

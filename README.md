@@ -106,7 +106,7 @@ A: Please check that your API key is functional, your OpenAI account has enough 
 
 ## Entity-Relationship Diagram (ERD)
 
-<img width="661" alt="UCL-ERD" src="https://github.com/user-attachments/assets/64618f8a-6567-4a90-b692-706e23597f76">
+<img width="661" alt="UCL-ERD" src="https://github.com/user-attachments/assets/64618f8a-6567-4a90-b692-706e23597f76" />
 
 
 ## Contributing
